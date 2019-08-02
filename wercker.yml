@@ -1,0 +1,18 @@
+box: node:latest
+build:
+  steps:
+    - npm-install
+    - script:
+        name: install angular/cli
+        code: |
+          npm install -g @angular/cli@8.2.0
+    - script:
+        name: build angular app
+        code: |
+          ng build --prod
+deploy:
+  steps:
+    - phres/git-push@0.4.10:
+        gh_token: $GITHUB_TOKEN
+        gh_pages: true
+        basedir: dist
