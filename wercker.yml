@@ -9,7 +9,7 @@ build:
     - script:
         name: build angular app
         code: |
-          ng build --prod
+          ng build --prod --output-path=./dist --base-href=/angular6-by-example-guessthenumber/
 deploy:
   steps:
     - pheres/git-push@0.4.10:
