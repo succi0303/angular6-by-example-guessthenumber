@@ -12,7 +12,7 @@ build:
           ng build --prod
 deploy:
   steps:
-    - phres/git-push@0.4.10:
+    - pheres/git-push@0.4.10:
         gh_token: $GITHUB_TOKEN
         gh_pages: true
         basedir: dist
